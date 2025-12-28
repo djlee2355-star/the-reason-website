@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Reason (이유) | Guitar Ministry & Music Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="The Reason (이유) is a guitar ministry and music group in Fairfax, Virginia, hosting benefit concerts to support local hospitals."
+  />
+  <style>
+    :root {
+      --bg: #fdfaf5;
+      --bg-soft: #f8efe3;
+      --bg-card: #ffffff;
+      --accent: #d97706;          /* warm amber */
+      --accent-soft: rgba(217, 119, 6, 0.09);
+      --accent-soft-strong: rgba(217, 119, 6, 0.18);
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(15, 23, 42, 0.08);
+      --border-strong: rgba(15, 23, 42, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #fef3e7 0, #fdfaf5 45%, #fdfaf5 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-main {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .brand-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: var(--accent);
+      background: #fffaf2;
+    }
+
+    .brand-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #4b5563;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.1rem;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.18s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: #92400e;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      color: #4b5563;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    main {
+      padding-bottom: 3rem;
+    }
+
+    .hero-wrap {
+      background: linear-gradient(135deg, #fff7ed, #fdfaf5);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero {
+      padding: 3rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.9rem;
+      color: #6b7280;
+    }
+
+    .hero-tag span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #16a34a;
+      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.25);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 3vw, 2.8rem);
+      line-height: 1.15;
+      margin-bottom: 0.7rem;
+      color: #111827;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease, border-color 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fefce8;
+      box-shadow: 0 10px 25px var(--accent-soft-strong);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px var(--accent-soft-strong);
+    }
+
+    .btn-outline {
+      border-color: var(--border-subtle);
+      background: #ffffff;
+      color: #374151;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: #fffbeb;
+      color: #92400e;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.2rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #6b7280;
+    }
+
+    .hero-stats span {
+      display: block;
+      font-size: 1.15rem;
+      color: #111827;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 1.2rem;
+      border: 1px solid var(--border-subtle);
+      padding: 1.4rem;
+      box-shadow: 0 18px 45px rgba(148, 163, 184, 0.3);
+    }
+
+    .hero-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 1rem;
+      border: 1px dashed var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      background: repeating-linear-gradient(
+          135deg,
+          #fff8eb 0,
+          #fff8eb 6px,
+          #fef3c7 6px,
+          #fef3c7 10px
+        );
+      font-size: 0.88rem;
+      color: #78350f;
+    }
+
+    .hero-photo-placeholder strong {
+      color: #92400e;
+    }
+
+    .hero-card-footer {
+      margin-top: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      padding: 0.2rem 0.6rem;
+      font-size: 0.75rem;
+      background: #fffbeb;
+      color: #92400e;
+    }
+
+    /* SECTION BASE */
+    section {
+      padding: 3rem 0;
+      scroll-margin-top: 80px;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-heading-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.2rem;
+      align-items: flex-end;
+      margin-bottom: 1.6rem;
+    }
+
+    .section-heading-row h2 {
+      font-size: 1.4rem;
+      color: #111827;
+    }
+
+    .section-heading-row p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 22rem;
+    }
+
+    /* SMOOTH REVEAL ANIMATION */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ABOUT / MISSION */
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 1.8rem;
+    }
+
+    .about-text p {
+      font-size: 0.95rem;
+      margin-bottom: 0.7rem;
+      color: #374151;
+    }
+
+    .about-text p span {
+      color: #92400e;
+      font-weight: 600;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      padding: 0.25rem 0.7rem;
+      background: #ffffff;
+      color: #6b7280;
+    }
+
+    .verse-card {
+      background: #ffffff;
+      border-radius: 1.1rem;
+      border: 1px solid var(--border-subtle);
+      padding: 1rem 1.1rem;
+      font-size: 0.88rem;
+      color: #374151;
+      box-shadow: 0 10px 25px rgba(148, 163, 184, 0.3);
+    }
+
+    .verse-card-title {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .verse-ref {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* PROGRAMS */
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .program-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      border: 1px solid var(--border-subtle);
+      padding: 0.95rem 1rem;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 20px rgba(148, 163, 184, 0.25);
+    }
+
+    .program-card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.3rem;
+      color: #111827;
+    }
+
+    .program-card p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+    }
+
+    /* MEMBERS / MUSICIANS */
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .member-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      border: 1px solid var(--border-subtle);
+      padding: 0.85rem 0.9rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      box-shadow: 0 8px 18px rgba(148, 163, 184, 0.2);
+    }
+
+    .member-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: #fff7ed;
+      color: #92400e;
+    }
+
+    .member-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .member-name {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .member-role {
+      font-size: 0.8rem;
+      color: #92400e;
+    }
+
+    .member-tag {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .member-note {
+      margin-top: 0.7rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* EVENTS */
+    .event-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    .event-card {
+      background: #ffffff;
+      border-radius: 1.1rem;
+      border: 1px solid var(--border-subtle);
+      padding: 1rem 1.1rem;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 22px rgba(148, 163, 184, 0.25);
+    }
+
+    .event-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: #111827;
+    }
+
+    .event-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .event-meta span {
+      display: inline-block;
+      margin-right: 0.6rem;
+    }
+
+    .event-type {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: #fffbeb;
+      color: #92400e;
+    }
+
+    .event-note {
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+      color: #4b5563;
+    }
+
+    .region-card {
+      background: #fffaf2;
+      border-radius: 1.1rem;
+      border: 1px dashed var(--border-subtle);
+      padding: 1rem 1.1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* SETLIST / MUSIC */
+    .setlist-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .setlist-card {
+      background: #ffffff;
+      border-radius: 1.1rem;
+      border: 1px solid var(--border-subtle);
+      padding: 1rem 1.1rem;
+      box-shadow: 0 8px 20px rgba(148, 163, 184, 0.25);
+    }
+
+    .setlist-card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.4rem;
+      color: #111827;
+    }
+
+    .setlist-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .setlist-card li {
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 0.7rem;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      min-height: 130px;
+      box-shadow: 0 8px 20px rgba(148, 163, 184, 0.2);
+    }
+
+    .gallery-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .gallery-item::after {
+      content: "View";
+      position: absolute;
+      bottom: 0.4rem;
+      right: 0.6rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      color: #6b7280;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 1.5rem;
+    }
+
+    .lightbox-inner {
+      max-width: 800px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 1rem;
+      border: 1px solid var(--border-subtle);
+      padding: 0.9rem;
+      position: relative;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.6rem;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      color: #4b5563;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .lightbox-caption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* SUPPORT / DONATIONS */
+    .support-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.8rem;
+    }
+
+    .support-card {
+      background: #ffffff;
+      border-radius: 1.15rem;
+      border: 1px solid var(--border-subtle);
+      padding: 1rem 1.1rem;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(148, 163, 184, 0.25);
+    }
+
+    .support-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: #111827;
+    }
+
+    .support-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.4rem;
+    }
+
+    .support-list li {
+      margin-bottom: 0.3rem;
+      color: var(--text-muted);
+    }
+
+    .frequency-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.6rem;
+    }
+
+    .frequency-box {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border-subtle);
+      padding: 0.7rem 0.8rem;
+      background: #fffbeb;
+      font-size: 0.85rem;
+      color: #4b5563;
+    }
+
+    .frequency-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #92400e;
+      margin-bottom: 0.25rem;
+    }
+
+    .levels-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.6rem;
+    }
+
+    .level-pill {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.8rem;
+      background: #ffffff;
+      color: var(--text-muted);
+    }
+
+    .qr-box {
+      margin-top: 0.7rem;
+      padding: 0.75rem;
+      border-radius: 0.9rem;
+      border: 1px dashed var(--border-strong);
+      background: #fffaf2;
+      font-size: 0.82rem;
+      color: #4b5563;
+      text-align: center;
+    }
+
+    .qr-image {
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto 0.5rem;
+      border-radius: 0.6rem;
+      background: #ffffff;
+    }
+
+    .thank-you {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: #92400e;
+    }
+
+    /* SPONSORS */
+    .sponsor-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .sponsor-badge {
+      flex: 0 0 140px;
+      height: 60px;
+      border-radius: 0.8rem;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      box-shadow: 0 6px 16px rgba(148, 163, 184, 0.2);
+    }
+
+    /* TESTIMONIALS */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .testimonial-card {
+      background: #ffffff;
+      border-radius: 1.1rem;
+      border: 1px solid var(--border-subtle);
+      padding: 1rem;
+      font-size: 0.88rem;
+      box-shadow: 0 8px 20px rgba(148, 163, 184, 0.2);
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid var(--border-strong);
+      background: #fff7ed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .testimonial-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .testimonial-role {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .testimonial-quote {
+      font-size: 0.85rem;
+      color: #374151;
+      margin-top: 0.2rem;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .faq-item {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #111827;
+    }
+
+    .faq-a {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.8rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      margin-top: 0.15rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 0.7rem;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      color: var(--text-main);
+      font-size: 0.9rem;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent-soft);
+    }
+
+    .contact-card {
+      background: #ffffff;
+      border-radius: 1.1rem;
+      border: 1px solid var(--border-subtle);
+      padding: 1rem 1.1rem;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 20px rgba(148, 163, 184, 0.2);
+    }
+
+    .contact-card a {
+      color: #92400e;
+      font-size: 0.9rem;
+    }
+
+    .insta-qr {
+      width: 100%;
+      max-width: 260px;
+      margin-top: 0.75rem;
+      border-radius: 0.9rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 1.4rem 0 1.8rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: #fdf7ee;
+    }
+
+    footer span {
+      color: #92400e;
+    }
+
+    footer a {
+      color: #92400e;
+      margin: 0 0.4rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .hero,
+      .two-column,
+      .event-list,
+      .setlist-columns,
+      .support-layout,
+      .faq-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 880px) {
+      .program-grid,
+      .member-grid,
+      .gallery-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 52px;
+        right: 1.5rem;
+        background: #ffffff;
+        border-radius: 0.9rem;
+        border: 1px solid var(--border-subtle);
+        padding: 0.6rem 0.9rem;
+        flex-direction: column;
+        gap: 0.8rem;
+        box-shadow: 0 12px 26px rgba(148, 163, 184, 0.35);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .hero {
+        padding-top: 2.4rem;
+      }
+
+      .program-grid,
+      .member-grid,
+      .gallery-grid,
+      .testimonial-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- LIGHTBOX FOR GALLERY -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery image">
+        ✕
+      </button>
+      <img src="" alt="Gallery image" id="lightboxImage" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-main">
+          <div class="brand-badge">TR</div>
+          <span>The Reason (이유)</span>
+        </div>
+        <div class="brand-subtitle">Guitar Ministry & Music Group</div>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#mission">Mission</a>
+        <a href="#programs">Programs</a>
+        <a href="#musicians">Musicians</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#support">Donate</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <div class="hero-wrap">
+      <section class="hero container" id="top">
+        <div>
+          <div class="hero-tag">
+            <span></span>
+            <p>Benefit concerts • Local hospitals • Fairfax, VA</p>
+          </div>
+          <h1>
+            Concerts with a purpose,<br />
+            <span>music with a mission.</span>
+          </h1>
+          <p class="hero-subtitle">
+            The Reason (이유) is a guitar ministry and music group in Fairfax, Virginia,
+            hosting benefit concerts to support local hospitals and bring the community
+            together.
+          </p>
+          <p class="hero-meta">
+            Worship & Christian • Modern Praise • Acoustic & Ensemble • Family-Friendly Events
+          </p>
+          <div class="hero-buttons">
+            <a href="#support" class="btn btn-primary">Support the Winter Concert</a>
+            <a href="#mission" class="btn btn-outline">Learn More</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <span>Fairfax</span>
+              Virginia
+            </div>
+            <div>
+              <span>Hospitals</span>
+              Benefit focus
+            </div>
+            <div>
+              <span>Music</span>
+              Worship & praise
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-photo-placeholder">
+              <div>
+                <strong>Concert Photo Placeholder</strong><br /><br />
+                Replace this area with a photo of
+                <strong>The Reason (이유)</strong> performing at a concert or rehearsal.
+              </div>
+            </div>
+            <div class="hero-card-footer">
+              <div>Live music • Community • Care</div>
+              <div class="pill">Now booking local events</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- MISSION / ABOUT -->
+    <section id="mission" class="reveal">
+      <div class="container">
+        <div class="section-label">Mission</div>
+        <div class="section-heading-row">
+          <h2>Why The Reason (이유) exists</h2>
+          <p>
+            Rooted in Fairfax, our heart is to use music to encourage, serve, and support
+            those in need—especially through local hospitals.
+          </p>
+        </div>
+
+        <div class="two-column">
+          <div class="about-text">
+            <p>
+              <span>The Reason (이유)</span> hosts benefit concerts and music events that
+              direct financial support to local hospitals. We believe that guitar music and
+              ensemble pieces can do more than entertain—they can bring comfort, hope, and a
+              sense of unity to our community.
+            </p>
+            <p>
+              Through each concert, we invite listeners not only to enjoy live music but
+              also to partner with us in generosity. Every note, every arrangement, and
+              every event is designed to point back to caring for people who are walking
+              through difficult seasons.
+            </p>
+            <p>
+              Our focus is Christ-centered, family-friendly, and community-oriented. We
+              regularly serve at:
+            </p>
+            <div class="badge-row">
+              <div class="badge">Community centers</div>
+              <div class="badge">Church & youth events</div>
+              <div class="badge">Nursing homes</div>
+              <div class="badge">Small gatherings</div>
+            </div>
+          </div>
+
+          <div class="verse-card">
+            <div class="verse-card-title">Scripture that guides our music</div>
+            <p>
+              “Let the word of Christ dwell in you richly, teaching and admonishing one
+              another in all wisdom, singing psalms and hymns and spiritual songs, with
+              thankfulness in your hearts to God.”
+            </p>
+            <p class="verse-ref">Colossians 3:16 (ESV)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS / WAYS WE SERVE -->
+    <section id="programs" class="reveal">
+      <div class="container">
+        <div class="section-label">Programs</div>
+        <div class="section-heading-row">
+          <h2>How we serve through music</h2>
+          <p>
+            We focus on clear, meaningful ways to use music in service and care for our
+            community.
+          </p>
+        </div>
+
+        <div class="program-grid">
+          <div class="program-card">
+            <h3>Benefit Concerts for Hospitals</h3>
+            <p>
+              Dedicated evenings where donations and offerings are directed to local
+              hospitals, supporting patient care and community health initiatives.
+            </p>
+          </div>
+          <div class="program-card">
+            <h3>Community & Church Events</h3>
+            <p>
+              Worship sets, background music, and special pieces for church gatherings,
+              youth events, and community programs that want a prayerful, musical atmosphere.
+            </p>
+          </div>
+          <div class="program-card">
+            <h3>Care & Encouragement Visits</h3>
+            <p>
+              Smaller ensemble visits to places such as nursing homes or community centers,
+              sharing gentle, uplifting music for those who may need extra encouragement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MUSICIANS / TEAM -->
+    <section id="musicians" class="reveal">
+      <div class="container">
+        <div class="section-label">Musicians</div>
+        <div class="section-heading-row">
+          <h2>The Reason (이유) ensemble</h2>
+          <p>
+            A guitar-centered group supported by strings, winds, and piano—working together
+            to create a warm, full sound for each event.
+          </p>
+        </div>
+
+        <div class="member-grid">
+          <div class="member-card">
+            <div class="member-avatar">RY</div>
+            <div class="member-body">
+              <div class="member-name">Rachel Yoo</div>
+              <div class="member-role">Acoustic Guitar</div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">RL</div>
+            <div class="member-body">
+              <div class="member-name">Rachel Lee</div>
+              <div class="member-role">Acoustic Guitar</div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">SL</div>
+            <div class="member-body">
+              <div class="member-name">Sean Lee</div>
+              <div class="member-role">Acoustic Guitar</div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">DL</div>
+            <div class="member-body">
+              <div class="member-name">Daniel Lee</div>
+              <div class="member-role">Acoustic Guitar</div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">SY</div>
+            <div class="member-body">
+              <div class="member-name">Sophia Yoo</div>
+              <div class="member-role">Viola</div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">VY</div>
+            <div class="member-body">
+              <div class="member-name">Victoria Yoo</div>
+              <div class="member-role">Cello</div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">JL</div>
+            <div class="member-body">
+              <div class="member-name">Joyce Lee</div>
+              <div class="member-role">Flute</div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">CL</div>
+            <div class="member-body">
+              <div class="member-name">Claire Lee</div>
+              <div class="member-role">Clarinet</div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">JL</div>
+            <div class="member-body">
+              <div class="member-name">Joshua Lee</div>
+              <div class="member-role">Trumpet</div>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">HL</div>
+            <div class="member-body">
+              <div class="member-name">Heather Lee</div>
+              <div class="member-role">Piano</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="member-note">
+          The Reason (이유) combines guitar, string, wind, and piano parts to create
+          arrangements tailored to each event, venue, and audience.
+        </p>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="reveal">
+      <div class="container">
+        <div class="section-label">Events</div>
+        <div class="section-heading-row">
+          <h2>Concerts & benefit evenings</h2>
+          <p>
+            This section highlights key dates and opportunities to join us for concerts
+            and benefit events.
+          </p>
+        </div>
+
+        <div class="event-list">
+          <div class="event-card">
+            <div class="event-title">The Reason Winter Concert</div>
+            <div class="event-meta">
+              <span><strong>Date:</strong> December 28, 2025</span><br />
+              <span><strong>Time:</strong> 5:00–7:00 PM</span><br />
+              <span><strong>Location:</strong> Crosspointe Swim and Racquet</span>
+            </div>
+            <div class="event-type">
+              <span>Small fundraising concert</span>
+            </div>
+            <p class="event-note">
+              An evening of worship, modern praise, and instrumental music—organized to
+              raise donations for local hospitals and encourage our community together.
+            </p>
+          </div>
+
+          <div class="region-card">
+            <strong>Where we typically serve</strong>
+            <p style="margin-top: 0.3rem;">
+              We primarily serve:
+            </p>
+            <ul class="support-list">
+              <li>• Fairfax, Virginia</li>
+              <li>• Nearby communities in Northern Virginia</li>
+              <li>• Local churches, community centers, and small venues</li>
+            </ul>
+            <p style="margin-top: 0.5rem;">
+              Event details, availability, and logistics are discussed individually for each
+              concert or program.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MUSIC / SETLIST -->
+    <section id="music" class="reveal">
+      <div class="container">
+        <div class="section-label">Music</div>
+        <div class="section-heading-row">
+          <h2>What we like to play</h2>
+          <p>
+            Christ-centered, family-friendly music shaped to fit each event, audience, and
+            venue.
+          </p>
+        </div>
+
+        <div class="setlist-columns">
+          <div class="setlist-card">
+            <h3>Worship & Praise</h3>
+            <ul>
+              <li>• Contemporary worship songs</li>
+              <li>• Modern praise with acoustic arrangements</li>
+              <li>• Sing-along selections when appropriate</li>
+              <li>• Instrumental worship medleys</li>
+            </ul>
+          </div>
+
+          <div class="setlist-card">
+            <h3>Instrumental & Ensemble</h3>
+            <ul>
+              <li>• Soft background music for events</li>
+              <li>• Guitar-led pieces supported by strings and winds</li>
+              <li>• Seasonal and event-specific arrangements</li>
+              <li>• Special pieces for hospital benefit concerts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="reveal">
+      <div class="container">
+        <div class="section-label">Photos</div>
+        <div class="section-heading-row">
+          <h2>Gallery</h2>
+          <p>
+            This section showcases concerts, rehearsals, and community moments from
+            The Reason (이유).
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-img="images/winter-concert-1.jpg" data-caption="Winter Concert – Group performance.">
+            <span>Photo: Winter concert (placeholder)</span>
+          </div>
+          <div class="gallery-item" data-img="images/rehearsal-1.jpg" data-caption="Rehearsal – Preparing pieces together.">
+            <span>Photo: Rehearsal (placeholder)</span>
+          </div>
+          <div class="gallery-item" data-img="images/hospital-benefit-1.jpg" data-caption="Benefit concert in support of local hospitals.">
+            <span>Photo: Hospital benefit (placeholder)</span>
+          </div>
+          <div class="gallery-item" data-img="images/youth-event-1.jpg" data-caption="Youth event worship set.">
+            <span>Photo: Youth event (placeholder)</span>
+          </div>
+          <div class="gallery-item" data-img="images/nursing-home-1.jpg" data-caption="Playing music at a local nursing home.">
+            <span>Photo: Nursing home visit (placeholder)</span>
+          </div>
+          <div class="gallery-item" data-img="images/group-photo-1.jpg" data-caption="Group photo of The Reason (이유).">
+            <span>Photo: Group picture (placeholder)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT / DONATIONS -->
+    <section id="support" class="reveal">
+      <div class="container">
+        <div class="section-label">Support & donations</div>
+        <div class="section-heading-row">
+          <h2>Partner with The Reason (이유)</h2>
+          <p>
+            This section explains how friends, families, and partners can support our
+            concerts and hospital-focused outreach.
+          </p>
+        </div>
+
+        <div class="support-layout">
+          <div class="support-card">
+            <h3>Ways to give</h3>
+            <p>
+              If you would like to support our benefit concerts and programs, you can give
+              in the following ways:
+            </p>
+            <ul class="support-list">
+              <li>• <strong>Cash</strong> at concerts and events</li>
+              <li>• <strong>Zelle</strong> using the information below</li>
+            </ul>
+
+            <div style="margin-top: 0.6rem;">
+              <strong>Zelle:</strong>
+              <br />
+              Send via Zelle to:
+              <br />
+              <code>rain1008us@yahoo.com</code>
+              <br />
+              <span style="font-size: 0.82rem; color: var(--text-muted);">
+                Please include a memo such as <strong>“The Reason”</strong>.
+              </span>
+            </div>
+
+            <div class="frequency-row">
+              <div class="frequency-box">
+                <div class="frequency-label">One-time</div>
+                <p>
+                  Support a specific concert, program, or season with a one-time gift at
+                  any level.
+                </p>
+              </div>
+              <div class="frequency-box">
+                <div class="frequency-label">Monthly</div>
+                <p>
+                  If you wish to give on a regular basis, you can arrange a monthly
+                  transfer through your bank using the same Zelle information.
+                </p>
+              </div>
+            </div>
+
+            <div class="levels-row">
+              <div class="level-pill">$20</div>
+              <div class="level-pill">$50</div>
+              <div class="level-pill">$100</div>
+              <div class="level-pill">Other amount</div>
+            </div>
+
+            <p class="thank-you">
+              Thank you for your kindness and for helping us support local hospitals
+              through music.
+            </p>
+          </div>
+
+          <div class="support-card">
+            <h3>Zelle QR code</h3>
+            <p>
+              You can also give by scanning this QR code with your banking app to open
+              Zelle directly.
+            </p>
+
+            <div class="qr-box">
+              <!-- Save your Zelle QR image as zelle-qr.png in the same folder as index.html -->
+              <img src="zelle-qr.png" alt="Zelle QR code for The Reason" class="qr-image" />
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem;">
+                The Reason – Zelle giving QR code.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPONSORS & PARTNERS -->
+    <section id="sponsors" class="reveal">
+      <div class="container">
+        <div class="section-label">Sponsors & partners</div>
+        <div class="section-heading-row">
+          <h2>Those who stand with us</h2>
+          <p>
+            This area highlights organizations, families, and community partners who
+            support our events.
+          </p>
+        </div>
+
+        <div class="sponsor-row">
+          <div class="sponsor-badge">
+            Sponsor logo (placeholder)
+          </div>
+          <div class="sponsor-badge">
+            Partner logo (placeholder)
+          </div>
+          <div class="sponsor-badge">
+            Community supporter
+          </div>
+          <div class="sponsor-badge">
+            Hospital partner
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="reveal">
+      <div class="container">
+        <div class="section-label">Kind words</div>
+        <div class="section-heading-row">
+          <h2>What people are saying</h2>
+          <p>
+            Placeholder quotes you can later replace with feedback from parents, leaders,
+            and event organizers.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                Photo
+              </div>
+              <div>
+                <div class="testimonial-name">Parent (Placeholder)</div>
+                <div class="testimonial-role">Winter Concert Attendee</div>
+              </div>
+            </div>
+            <div class="testimonial-quote">
+              “The Reason (이유) offered a beautiful evening of music that encouraged our
+              hearts and pointed us toward caring for others.”
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                Photo
+              </div>
+              <div>
+                <div class="testimonial-name">Church Leader (Placeholder)</div>
+                <div class="testimonial-role">Youth Event Host</div>
+              </div>
+            </div>
+            <div class="testimonial-quote">
+              “They were thoughtful, prepared, and gracious. Their music added a meaningful
+              tone to our event.”
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                Photo
+              </div>
+              <div>
+                <div class="testimonial-name">Community Member (Placeholder)</div>
+                <div class="testimonial-role">Benefit Concert Guest</div>
+              </div>
+            </div>
+            <div class="testimonial-quote">
+              “It’s encouraging to see musicians using their gifts to serve and support
+              local hospitals in such a thoughtful way.”
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="reveal">
+      <div class="container">
+        <div class="section-label">FAQ</div>
+        <div class="section-heading-row">
+          <h2>Common questions</h2>
+          <p>
+            A quick overview for churches, schools, hospitals, and community groups who may
+            want to partner with The Reason (이유).
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div>
+            <div class="faq-item">
+              <div class="faq-q">Who is The Reason (이유)?</div>
+              <div class="faq-a">
+                The Reason (이유) is a guitar-centered music group with additional strings,
+                winds, and piano, based in Fairfax, Virginia and focused on benefit
+                concerts for local hospitals.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">What kind of events do you play for?</div>
+              <div class="faq-a">
+                We serve at community centers, church and youth events, nursing homes, and
+                small gatherings that align with our family-friendly, worship-based focus.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">How far are you willing to travel?</div>
+              <div class="faq-a">
+                We primarily serve Fairfax and nearby Northern Virginia communities. Travel
+                outside this area can be discussed depending on timing and logistics.
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="faq-item">
+              <div class="faq-q">Do you charge a fee?</div>
+              <div class="faq-a">
+                Because our focus is on benefit concerts and serving, we usually receive
+                donations or honorariums rather than a fixed fee. Details can be arranged
+                for each event.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Is the music appropriate for families and churches?</div>
+              <div class="faq-a">
+                Yes. Our selections are worship-based, Christ-honoring, and family-friendly.
+                We do not play explicit or inappropriate content.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">How can we book The Reason (이유)?</div>
+              <div class="faq-a">
+                You can use the contact section below or email us directly at
+                <strong>djlee2355@gmail.com</strong>. We’ll follow up to discuss dates,
+                location, and event details.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="container">
+        <div class="section-label">Contact</div>
+        <div class="section-heading-row">
+          <h2>Contact & booking</h2>
+          <p>
+            Have a question or event idea? We would be glad to hear from you and explore if
+            The Reason (이유) is a good fit.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div>
+            <form>
+              <div>
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  placeholder="Tell us about your event, date, location, and what kind of music you’d like."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="margin-top: 0.4rem;">
+                Send (sample form)
+              </button>
+            </form>
+          </div>
+
+          <div class="contact-card">
+            <h3>Direct contact</h3>
+            <p>
+              Email:
+              <br />
+              <a href="mailto:djlee2355@gmail.com">djlee2355@gmail.com</a>
+            </p>
+            <p style="margin-top: 0.6rem;">
+              Instagram:
+              <br />
+              <a href="https://www.instagram.com/the_leeyoo_reason?igsh=dnBkOHgxOTQwbWRs" target="_blank" rel="noopener">
+                @the_leeyoo_reason
+              </a>
+            </p>
+
+            <p style="margin-top: 0.6rem;">
+              Location:
+              <br />
+              Fairfax, Virginia (Northern Virginia region)
+            </p>
+
+            <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">
+              Scan the QR code below to go directly to our Instagram page.
+            </p>
+            <!-- Save your Instagram QR image as instagram-qr.png -->
+            <img src="instagram-qr.png" alt="Instagram QR for @the_leeyoo_reason" class="insta-qr" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="margin-bottom: 0.35rem;">
+        © <span>The Reason (이유)</span> – Guitar Ministry & Music Group, Fairfax, Virginia.
+      </div>
+      <div>
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    const navLinkEls = document.querySelectorAll(".nav-links a");
+
+    // Smooth scroll + close mobile menu
+    navLinkEls.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("#")) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+          if (window.innerWidth <= 640) {
+            navLinks.classList.remove("open");
+          }
+        }
+      });
+    });
+
+    // Section reveal animation
+    const revealSections = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+    revealSections.forEach((sec) => revealObserver.observe(sec));
+
+    // Scroll spy for nav active state
+    const sectionsWithId = document.querySelectorAll("section[id]");
+    const spyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinkEls.forEach((link) => {
+              const match = link.getAttribute("href") === `#${id}`;
+              link.classList.toggle("active", match);
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.4,
+        rootMargin: "-40% 0px -40% 0px",
+      }
+    );
+    sectionsWithId.forEach((sec) => spyObserver.observe(sec));
+
+    // Lightbox gallery
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    document.querySelectorAll(".gallery-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        const imgSrc = item.getAttribute("data-img");
+        const caption = item.getAttribute("data-caption");
+        lightboxImg.src = imgSrc;
+        lightboxCaption.textContent = caption;
+        lightbox.style.display = "flex";
+      });
+    });
+
+    lightboxClose.addEventListener("click", () => {
+      lightbox.style.display = "none";
+      lightboxImg.src = "";
+      lightboxCaption.textContent = "";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+        lightboxCaption.textContent = "";
+      }
+    });
+  </script>
+</body>
+</html>
